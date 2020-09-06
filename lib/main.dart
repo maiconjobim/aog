@@ -1,3 +1,4 @@
+import 'package:aog/widgets/input.widget.dart';
 import 'package:aog/widgets/logo.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
@@ -24,41 +25,16 @@ class HomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var _gasController = new MoneyMaskedTextController();
+    var _alcoolController = new MoneyMaskedTextController();
 
     return Scaffold(
       backgroundColor: Theme.of(context).primaryColor,
       body: ListView(children: [
         Logo(),
-        Row(
-          children: [
-            Container(
-              width: 100,
-              alignment: Alignment.centerRight,
-              child: Text(
-                "Gasolina",
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 35,
-                    fontFamily: "Big Shouders Display"),
-              ),
-            ),
-            SizedBox(
-              width: 20,
-            ),
-            Expanded(
-              child: TextFormField(
-                controller: _gasController,
-                keyboardType: TextInputType.number,
-                style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 45,
-                    fontFamily: "Big Shouders Display"),
-                decoration: InputDecoration(
-                  border: InputBorder.none,
-                ),
-              ),
-            ),
-          ],
+        Input(controller: _gasController, label: "Gasolina"),
+        Input(
+          controller: _alcoolController,
+          label: "Álcool",
         )
       ]),
     );
