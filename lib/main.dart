@@ -1,6 +1,7 @@
 import 'package:aog/widgets/input.widget.dart';
 import 'package:aog/widgets/loading-button.widget.dart';
 import 'package:aog/widgets/logo.widget.dart';
+import 'package:aog/widgets/submitForm.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 
@@ -34,17 +35,12 @@ class HomePage extends StatelessWidget {
       backgroundColor: Theme.of(context).primaryColor,
       body: ListView(children: [
         Logo(),
-        Success(
-          reset: () => {},
-          result: "Compensa utilizar x",
-        ),
-        Input(controller: _gasController, label: "Gasolina"),
-        Input(controller: _alcoolController, label: "Álcool"),
-        LoadingButton(
-          text: "CALCULAR",
-          handle: () => {},
+        SubmitForm(
           busy: false,
-        ),
+          alcoolController: _alcoolController,
+          gasController: _gasController,
+          submitHandle: () => {},
+        )
       ]),
     );
   }
