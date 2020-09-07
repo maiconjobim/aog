@@ -1,4 +1,5 @@
 import 'package:aog/widgets/input.widget.dart';
+import 'package:aog/widgets/loading-button.widget.dart';
 import 'package:aog/widgets/logo.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
@@ -32,10 +33,12 @@ class HomePage extends StatelessWidget {
       body: ListView(children: [
         Logo(),
         Input(controller: _gasController, label: "Gasolina"),
-        Input(
-          controller: _alcoolController,
-          label: "Álcool",
-        )
+        Input(controller: _alcoolController, label: "Álcool"),
+        LoadingButton(
+          text: "CALCULAR",
+          handle: () => {},
+          busy: false,
+        ),
       ]),
     );
   }
