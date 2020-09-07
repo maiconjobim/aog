@@ -4,6 +4,8 @@ import 'package:aog/widgets/logo.widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_masked_text/flutter_masked_text.dart';
 
+import 'widgets/success.widget.dart';
+
 void main() {
   runApp(MyApp());
 }
@@ -32,6 +34,10 @@ class HomePage extends StatelessWidget {
       backgroundColor: Theme.of(context).primaryColor,
       body: ListView(children: [
         Logo(),
+        Success(
+          reset: () => {},
+          result: "Compensa utilizar x",
+        ),
         Input(controller: _gasController, label: "Gasolina"),
         Input(controller: _alcoolController, label: "Álcool"),
         LoadingButton(
